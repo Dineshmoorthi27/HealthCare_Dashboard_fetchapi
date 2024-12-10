@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="HealthCare Dashboard - A comprehensive dashboard to monitor patient health metrics, diagnosis history, vitals, and lab results.">
+    <meta name="keywords" content="healthcare dashboard, patient monitoring, diagnosis history, vitals, lab results, medical dashboard">
+    <meta name="author" content="Dinesh M_skilltest">
+    <meta property="og:title" content="HealthCare Dashboard">
+    <meta property="og:description" content="Monitor and manage patient health with our intuitive HealthCare Dashboard.">
+    <meta property="og:image" content="asserts/images/icons/og-image.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="HealthCare Dashboard">
+    <meta name="twitter:description" content="Monitor and manage patient health with our intuitive HealthCare Dashboard.">
+    <meta name="twitter:image" content="asserts/images/icons/og-image.png">
+
+    <title>HealthCare Dashboard - Patient Monitoring & Analysis</title>
+
+    <link rel="stylesheet" href="asserts/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="main">
+        <nav>
+            <div class="logo">
+                <a href="" target="_blank" rel="noopener noreferrer"><img src="asserts/images/icons/TestLogo.svg" alt="logo"></a>
+            </div>
+            <div class="menu">
+                <ul >
+                    <li><img src="asserts/images/icons/home_FILL0_wght300_GRAD0_opsz24.svg" alt=""><a href="">OverView</a></li>
+                    <li><img src="asserts/images/icons/group_FILL0_wght300_GRAD0_opsz24.svg" alt=""><a href="">Patients</a></li>
+                    <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar4" viewBox="0 0 16 16">
+                        <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M2 2a1 1 0 0 0-1 1v1h14V3a1 1 0 0 0-1-1zm13 3H1v9a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1z"/>
+                      </svg><a href="">Schedule</a></li>
+                    <li><img src="asserts/images/icons/chat_bubble_FILL0_wght300_GRAD0_opsz24.svg" alt=""><a href="">Message</a></li>
+                    <li><img src="asserts/images/icons/credit_card_FILL0_wght300_GRAD0_opsz24.svg" alt=""><a href="">Transactions</a></li>
+                </ul>
+            </div>
+            <div class="profile">
+                <div class="profile-img">
+                    <img src="asserts/images/profile/senior-woman-doctor-and-portrait-smile-for-health-2023-11-27-05-18-16-utc@2x.png" alt="">
+                </div>
+                <div class="details">
+                    <h5>Dr.Jose Simmons</h5>
+                    <p>General Practitoner</p>
+                </div>
+                <hr>
+                <div class="icons">
+                    <img src="asserts/images/icons/settings_FILL0_wght300_GRAD0_opsz24.svg" alt="">
+                    <img src="asserts/images/icons/more_vert_FILL0_wght300_GRAD0_opsz24.svg" alt="">
+                </div>
+            </div>
+        </nav>
+        <aside>
+            <div class="header">
+                <h3>Patients</h3>
+                <img src="asserts/images/icons/search_FILL0_wght300_GRAD0_opsz24.svg" alt="Search">
+            </div>
+            <div class="patient_details">
+                <!-- Patient Details -->
+                <ul id="patient-list">
+                    <p>Loading patients...</p>
+                  </ul>
+            </div>
+        </aside>
+        <article>
+          <div class="dashboard-container">
+                <div class="wrapper1">
+                    <div class="diagnosis-history">
+                        <h3>Diagnosis History</h3>
+                        <div class="chart">
+                          <!-- Placeholder for chart -->
+                          <div id="chartContainer">
+                            <div class="c1">
+                              <h3>Blood Pressure </h3><p>(Last 6 Months) <img src="asserts/images/icons/expand_more_FILL0_wght300_GRAD0_opsz24.svg"></p>
+                            </div>
+                            <canvas id="bloodPressureChart"></canvas>
+                          </div>
+
+                          <div class="container">
+                            <div class="stat">
+                              <div class="label">Systolic</div>
+                              <div class="value" id="svalue"> </div>
+                              <div class="status up" id="slevel"></div>
+                            </div>
+                            <div class="divider"></div>
+                            <div class="stat">
+                              <div class="label Diastolic ">Diastolic</div>
+                              <div class="value" id="dvalue"></div>
+                              <div class="status down"  id="dlevel"></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="vitals">
+                          <div class="vital-card">
+                            <img src="asserts/images/icons/respiratory rate.svg" alt="">
+                            <p>Respiratory Rate</p><br>
+                            <strong ><span id="rvalue">-</span> bpm</strong>
+                            <p id="rlevel">-</p>
+                          </div>
+                          <div class="vital-card">
+                            <img src="asserts\images\icons\HeartBPM.svg" alt="">
+                        <p>Temperature</p><br>
+                        <strong> <span id="tvalue">-</span> °F</strong>
+                        <p id="tlevel">-</p>
+                          </div>
+                          <div class="vital-card">
+                            <img src="asserts\images\icons\temperature.svg" alt="">
+                        <p>Heart Rate</p><br>
+                        <strong> <span id="hvalue">-</span> bpm</strong>
+                            <p id="hlevel">-</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="profile" id="profile">
+                        <!-- Profile content -->
+                      </div> 
+                </div>
+                <div class="wrapper2">
+                  <div class="diagnostic-list" >
+                    <h3>Diagnostic List</h3>
+                      <table id="diagnostic-list">
+                      </table>
+                    </div>
+                    <div class="lab-results" >
+                      <h3>Lab Results</h3>
+                      <ul id="lab-results">
+                      </ul>
+                    </div>
+              </div>     
+          </div>         
+        </article>
+    </div>
+    <script src="asserts/js/scripts.js"></script>
+</body>
+</html>
