@@ -4,7 +4,7 @@
 
 A comprehensive and interactive dashboard for monitoring patient health metrics, diagnosis history, vitals, and lab results. This project provides a streamlined user interface for healthcare professionals to manage patient data efficiently.
 
-![HealthCare Dashboard Preview](assets/images/icons/og-image.png)
+![HealthCare Dashboard Preview](screenshots/after%20selecting%20patient.jpg)
 
 ---
 
@@ -35,14 +35,18 @@ A comprehensive and interactive dashboard for monitoring patient health metrics,
 
 ## Project Structure
 
-```plaintext
-.
-├── index.html         # Main HTML file
-├── assets/
-│   ├── css/style.css  # Stylesheet for the project
-│   ├── js/scripts.js  # JavaScript for functionality and interactivity
-│   ├── images/        # Images and icons used in the project
-├── README.md          # Project documentation
+```
+├── index.html             # Main HTML file
+├── assets/                # Folder for project resources
+│   ├── css/
+│   │   └── style.css      # Stylesheet for the project
+│   ├── js/
+│   │   └── scripts.js     # JavaScript for interactivity
+│   ├── images/            # Images and icons used in the project
+├── screenshots/           # Folder for project screenshots
+│   └── output.png         # Screenshot showcasing the dashboard
+├── README.md              # Project documentation
+
 ```
 
 ## API Integration
@@ -89,3 +93,10 @@ Provides access to the following sections:
 * Edit Functionality: Add features to edit and update patient details directly.
 * Real-Time Notifications: Integrate alerts for critical health changes.
 * Advanced Analytics: Include predictive analytics for early diagnosis.
+
+## Screenshots
+
+### Dashboard Overview before selecting Patient Profile
+![Dashboard Preview](screenshots/before%20selecting%20patient.jpg)
+### Patient Profile
+![Patient Profile Preview](screenshots/after%20selecting%20patient.jpg)
